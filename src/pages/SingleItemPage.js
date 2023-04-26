@@ -1,13 +1,15 @@
 import { useEffect } from "react";
 import axios from "axios";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import useStarship from "../context/StarshipContext";
 
 function SingleItemPage() {
   const { starshipData, setStarshipData } = useStarship();
-  const { id } = useParams();
-
-  useEffect(() => {
+  // const { id } = useParams();
+  const location = useLocation();
+  const propsData = location.state;
+console.log(propsData)
+ /*  useEffect(() => {
     // List single starship
     const starships = async () => {
       try {
@@ -21,11 +23,11 @@ function SingleItemPage() {
     };
     starships();
   }, [id]);
-
+*/
   return (
     <div className="ship-details">
-      <p>Name: {starshipData.name}</p>
-      <p>Model: {starshipData.model}</p>
+      <p>Name: {propsData.name}</p>
+      <p>Model: </p>
       <Link to="/">Return</Link>
     </div>
   );

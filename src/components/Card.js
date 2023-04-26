@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 
 import starships from "../assets/starship.jpg";
 
-function Card({ name, model, rate, starship}) {
+function Card({ name, model, rate, starship, id, photoLink}) {
   
   return (
-    <Link  to={`/starship/`} >
+    <Link  
+    to={`/starship/${id}`}
+    state={starship} >
     <div className="card max-w-sm m-5 flex flex-col bg-gray-900 p-2 rounded-2xl shadow-lg shadow-cyan-500/50  hover:shadow-2xl hover:shadow-cyan-500/50">
       <div className="card-img">
         <img className="rounded-2xl" src={starships} alt="starship-img " />
@@ -16,6 +18,7 @@ function Card({ name, model, rate, starship}) {
       <div className="card-name text-slate-50 text-center text-2xl">
         {name}
       </div>
+      <div>{photoLink}</div>
       <div className="card-model text-slate-50 text-lg ">
        <span className="font-bold">Model: </span> {model}
       </div>
