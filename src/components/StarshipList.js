@@ -40,7 +40,7 @@ function StarshipList() {
                   id={Number(starship.url.split("/").filter(Boolean).pop())}
                   starship={starship}
                   photoLink={itemsToDisplay[i]}
-                  key={i}
+                  key={starship.url}
                   name={starship.name}
                   model={starship.model}
                   rate={starship.hyperdrive_rating}
