@@ -1,8 +1,9 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { MdOutlineArrowBackIos } from "react-icons/md";
 
 function Card({ name, model, rate, starship, id, photoLink }) {
-  const [showModal, setShowModal] = useState(false);
+const [showModal, setShowModal] = useState(false);
 
   return (
     <>
@@ -11,27 +12,34 @@ function Card({ name, model, rate, starship, id, photoLink }) {
         className="detail-btn"
         onClick={() => setShowModal(true)}
       >
-        <div className="card w-96 m-5 flex flex-col bg-gray-900 p-2 rounded-2xl shadow-lg shadow-cyan-500/50  hover:shadow-2xl hover:shadow-cyan-500/50">
-          <div className="card-img">
-            <img
-              className="rounded-2xl  w-full h-64"
-              src={photoLink}
-              alt="starship-img "
-            />
-          </div>
-          <div className="px-4 py-3">
-            <div className="card-name text-slate-50 text-center text-2xl">
-              {name}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          transition={{ duration: 1.0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.2 }}
+        >
+          <div className="card w-96 m-5 flex flex-col bg-gray-900 p-2 rounded-2xl shadow-lg shadow-cyan-500/50  hover:shadow-2xl hover:shadow-cyan-500/50">
+            <div className="card-img">
+              <img
+                className="rounded-2xl  w-full h-64"
+                src={photoLink}
+                alt="starship-img "
+              />
             </div>
+            <div className="px-4 py-3">
+              <div className="card-name text-slate-50 text-center text-2xl">
+                {name}
+              </div>
 
-            <div className="card-model text-slate-50 text-lg ">
-              <span className="font-bold">Model: </span> {model}
-            </div>
-            <div className="card-rate text-slate-50 text-lg">
-              <span className="font-bold">Hyperdrive Rating: </span> {rate}
+              <div className="card-model text-slate-50 text-lg ">
+                <span className="font-bold">Model: </span> {model}
+              </div>
+              <div className="card-rate text-slate-50 text-lg">
+                <span className="font-bold">Hyperdrive Rating: </span> {rate}
+              </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </button>
       {/* show modal for details of starship*/}
       {showModal && (
@@ -78,21 +86,19 @@ function Card({ name, model, rate, starship, id, photoLink }) {
               <hr></hr>
               <div className="flex flex-row flex-wrap gap-6 py-8">
                 <p className="">
-                  Created:{" "}
+                  Crew:{" "}
+                  <span className="text-yellow-400">&nbsp;{starship.crew}</span>
+                </p>
+                <p className="">
+                  Max Atmosphering Speed:{" "}
                   <span className="text-yellow-400">
-                    &nbsp;{starship.created}
+                    &nbsp;{starship.max_atmosphering_speed}
                   </span>
                 </p>
                 <p className="">
-                  Edited:{" "}
+                  Cargo Capacity:{" "}
                   <span className="text-yellow-400">
-                    &nbsp;{starship.edited}
-                  </span>
-                </p>
-                <p className="">
-                  Cost in Credits:{" "}
-                  <span className="text-yellow-400">
-                    &nbsp;{starship.cost_in_credits}
+                    &nbsp;{starship.cargo_capacity}
                   </span>
                 </p>
               </div>

@@ -1,21 +1,18 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import axios from "axios";
-import Images from '../components/Images'
-
+import Images from "../components/Images";
 
 const StarshipContext = createContext();
 
 export const StarshipProvider = ({ children }) => {
-  
   const [search, setSearch] = useState("");
   const [starshipData, setStarshipData] = useState([]);
   const [loading, setLoading] = useState(true);
- 
+
   const itemsToDisplay = Images.map((photo) => {
-    return photo.img
-   
+    return photo.img;
   });
-  
+
   const values = {
     search,
     setSearch,
@@ -23,7 +20,7 @@ export const StarshipProvider = ({ children }) => {
     setStarshipData,
     loading,
     setLoading,
-    itemsToDisplay
+    itemsToDisplay,
   };
 
   useEffect(() => {
@@ -59,7 +56,6 @@ export const StarshipProvider = ({ children }) => {
     listStarships();
   }, []);
 
-  
   return (
     <StarshipContext.Provider value={values}>
       {children}

@@ -5,6 +5,16 @@
 /.pnp
 .pnp.js
 
+# Graphics Interchange Format
+*.gif
+
+# Portable Network Graphics
+*.png
+
+# Scalable Vector Graphics
+*.svg
+*.svgz
+
 # testing
 /coverage
 

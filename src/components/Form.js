@@ -26,7 +26,7 @@ function Form() {
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
           className="block w-full p-4 pl-10 text-sm focus:outline-none text-cyan-500 font-bold rounded-sm bg-zinc-900 appearance-none  border-none"
-          placeholder="Search..."
+          placeholder="Search for Starships"
           required
         />
       </div>
