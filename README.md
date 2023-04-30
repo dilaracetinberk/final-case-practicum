@@ -28,4 +28,11 @@ The Star Wars API React.js application has the following features:
 This application uses the Star Wars API to retrieve information about starships. The API endpoint used is https://swapi.dev/api/starships/. Axios is used to fetch the data from the API and display it in the application.
 
 ## Preview 
+You can preview the application by following this link: 
+https://final-case-practicum.vercel.app/ 
+
 ## Screenshots 
+Screenshots of the application can be found at this link: 
+![starships](https://user-images.githubusercontent.com/97848364/235356686-cdd4e4e2-230d-41d1-a46e-4ab7305f22ae.JPG)
+![singlestarship](https://user-images.githubusercontent.com/97848364/235356695-d93f94b2-daa6-41bc-8ae2-a400ca0703e9.JPG)
+
